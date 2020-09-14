@@ -63,10 +63,8 @@ public class kapitel2 {
 
             double subtotal = Integer.parseInt(subandgrat[0]);
             double gratuityrate = Integer.parseInt(subandgrat[1]);
-
             double gratuity = subtotal * gratuityrate / 100.0;
             double total = subtotal + gratuity;
-
 
             System.out.println("The gratuity is " + gratuity + " and total is " + total);
 
