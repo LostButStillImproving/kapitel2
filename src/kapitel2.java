@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -22,14 +23,14 @@ public class kapitel2 {
             Scanner scan = new Scanner(System.in);
 
             System.out.println("Enter the length of the sides and height of the Equilateral triangle:");
-
             double length = Double.parseDouble(scan.nextLine());
+
             double area = ((sqrt(3) / 4) * pow(length, 2));
             System.out.println("The area is " + roundto2(area));
+
             double volume = area * length;
             System.out.println("The volume of the Triangular prism is " + roundto2(volume));
         }
-
     }
 
     public static class opgave3 {
@@ -113,7 +114,76 @@ public class kapitel2 {
         }
     }
 
+    public static class opgave9 {
+        public static void main(String[] args) {
+            Scanner scan = new Scanner(System.in);
+
+            System.out.println("Enter v0,v1 and t:");
+            String[] values = scan.nextLine().split(" ");
+
+            double v0 = Double.parseDouble(values[0]);
+            double v1 = Double.parseDouble(values[1]);
+            double t = Double.parseDouble(values[2]);
+
+
+            System.out.println("The average acceleration is " + (v1-v0)/t);
+
+        }
+    }
+
+    public static class opgave10 {
+        public static void main(String[] args) {
+
+            Scanner scan = new Scanner(System.in);
+
+            System.out.println("Enter the amount of water in kilograms:");
+            double waterweight = Double.parseDouble(scan.nextLine());
+            System.out.println("Enter the initial temperature:");
+            double initialtemp = Double.parseDouble(scan.nextLine());
+            System.out.println("Enter the final temperature:");
+            double finaltemp = Double.parseDouble(scan.nextLine());
+
+            double energy = waterweight * (finaltemp-initialtemp)*4184;
+
+            System.out.println("The energy needed is " + energy );
+        }
+    }
+
+    public static class opgave12 {
+        public static void main(String[] args) {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Enter speed and acceleration:");
+
+            String [] input = scan.nextLine().split(" ");
+            double [] numbers= Arrays.stream(input).mapToDouble(Double::valueOf).toArray();
+            System.out.println("The minimum runway length for this airplane is "
+                                    + ((pow(numbers[0], 2))/(2*numbers[1])));
+        }
+    }
+
+    public static class opgave13 {
+        public static void main(String[] args) {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Enter the montly savings amount");
+
+            double savingsamount = Double.parseDouble(scan.nextLine());
+            double savings = savingsamount*(1.003125);
+
+            //rentes regning over 5 loops
+            for (int i = 0; i < 5 ; i++) {
+                savings = (savings + savingsamount)*1.003125;
+            }
+            System.out.println("after the 6th month the account value is " + savings);
+        }
+    }
+
+
+
+
+
+
     public static double roundto2(double number) {
         return Math.round(number * 100) / 100.0;
     }
 }
+

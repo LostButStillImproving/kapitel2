@@ -26,14 +26,5 @@ public class kapitel2Test {
         System.setErr(originalErr);
     }
 
-    @Test
-    public void opgave1test(){
-
-        kapitel2.opgave10 opgave10 = new kapitel2.opgave10();
-
-        assertEquals("hi", outContent.toString());
-
-
-    }
 
 }
