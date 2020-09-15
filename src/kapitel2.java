@@ -156,6 +156,7 @@ public class kapitel2 {
 
             String [] input = scan.nextLine().split(" ");
             double [] numbers= Arrays.stream(input).mapToDouble(Double::valueOf).toArray();
+
             System.out.println("The minimum runway length for this airplane is "
                                     + ((pow(numbers[0], 2))/(2*numbers[1])));
         }
@@ -177,11 +178,56 @@ public class kapitel2 {
         }
     }
 
+    public static class opgave14 {
+        public static void main(String[] args) {
+            Scanner scan = new Scanner(System.in);
+
+            System.out.println("Enter your weight in pounds:");
+            double weight = Double.parseDouble(scan.nextLine());
+            double weightkg = weight*0.45359237;
+            System.out.println("Enter your height in inches");
+            double height = Double.parseDouble(scan.nextLine());
+            double heightinm = height*0.0254;
+
+            System.out.println("BMI is " + roundto2(weightkg/(pow(heightinm,2))));
+        }
+    }
+
+    public static class opgave15 {
+        public static void main(String[] args) {
+            Scanner scan = new Scanner(System.in);
+
+            System.out.println("Enter x1 and y1:");
+            double x1 = scan.nextDouble();
+            double y1 = scan.nextDouble();
+            System.out.println("Enter x2 and y2:");
+            double x2 = scan.nextDouble();
+            double y2 = scan.nextDouble();
+
+            double xdifsquared = pow(x2-x1, 2);
+            double ydifsquared = pow(y2-y1, 2);
+
+            System.out.println("The distance between the two points is " + roundto2(pow(xdifsquared+ydifsquared, 0.5)));
+        }
+    }
+
+    public static class opgave16 {
+        public static void main(String[] args) {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Enter the length of the side:");
+            double side = scan.nextDouble();
+            System.out.println("The area of the hexagon is " + roundto2((3*sqrt(3)/2)*pow(side, 2)));
+        }
+    }
+
+    public static class opgave17 {
+        public static void main(String[] args) {
+            //
+        }
+    }
 
 
-
-
-
+    //Hjælpefunktion som runder doubles til 2 digits
     public static double roundto2(double number) {
         return Math.round(number * 100) / 100.0;
     }
