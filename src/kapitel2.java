@@ -1,12 +1,13 @@
+import math.math;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 import static java.lang.Math.*;
-import static java.lang.String.*;
 
-public class kapitel2 {
+public class kapitel2 implements math {
 
     public static class opgave1 {
         public static void main(String[] args) {
@@ -26,10 +27,10 @@ public class kapitel2 {
             double length = Double.parseDouble(scan.nextLine());
 
             double area = ((sqrt(3) / 4) * pow(length, 2));
-            System.out.println("The area is " + roundto2(area));
+            System.out.println("The area is " + math.roundto2(area));
 
             double volume = area * length;
-            System.out.println("The volume of the Triangular prism is " + roundto2(volume));
+            System.out.println("The volume of the Triangular prism is " + math.roundto2(volume));
         }
     }
 
@@ -39,7 +40,7 @@ public class kapitel2 {
 
             System.out.println("Enter a value for meter:");
             double value = Double.parseDouble(scan.nextLine());
-            System.out.println(value + " meters is " + roundto2(value * 3.2786) + " feet");
+            System.out.println(value + " meters is " + math.roundto2(value * 3.2786) + " feet");
         }
     }
 
@@ -49,7 +50,7 @@ public class kapitel2 {
 
             System.out.println("Enter a number in square meters:");
             double sqm = Double.parseDouble(scan.nextLine());
-            System.out.println(sqm + " square meters is " + roundto2(sqm * 0.3025) + "pings");
+            System.out.println(sqm + " square meters is " + math.roundto2(sqm * 0.3025) + "pings");
 
         }
     }
@@ -189,7 +190,7 @@ public class kapitel2 {
             double height = Double.parseDouble(scan.nextLine());
             double heightinm = height*0.0254;
 
-            System.out.println("BMI is " + roundto2(weightkg/(pow(heightinm,2))));
+            System.out.println("BMI is " + math.roundto2(weightkg/(pow(heightinm,2))));
         }
     }
 
@@ -207,7 +208,7 @@ public class kapitel2 {
             double xdifsquared = pow(x2-x1, 2);
             double ydifsquared = pow(y2-y1, 2);
 
-            System.out.println("The distance between the two points is " + roundto2(pow(xdifsquared+ydifsquared, 0.5)));
+            System.out.println("The distance between the two points is " + math.roundto2(pow(xdifsquared+ydifsquared, 0.5)));
         }
     }
 
@@ -216,7 +217,7 @@ public class kapitel2 {
             Scanner scan = new Scanner(System.in);
             System.out.println("Enter the length of the side:");
             double side = scan.nextDouble();
-            System.out.println("The area of the hexagon is " + roundto2((3*sqrt(3)/2)*pow(side, 2)));
+            System.out.println("The area of the hexagon is " + math.roundto2((3*sqrt(3)/2)*pow(side, 2)));
         }
     }
 
@@ -227,9 +228,5 @@ public class kapitel2 {
     }
 
 
-    //Hjælpefunktion som runder doubles til 2 digits
-    public static double roundto2(double number) {
-        return Math.round(number * 100) / 100.0;
-    }
 }
 
