@@ -1,3 +1,5 @@
+package Kapitel2;
+
 import math.math;
 
 import java.util.ArrayList;
@@ -7,7 +9,7 @@ import java.util.Scanner;
 
 import static java.lang.Math.*;
 
-public class kapitel2 implements math {
+public class Kapitel2 implements math {
 
     public static class opgave1 {
         public static void main(String[] args) {
