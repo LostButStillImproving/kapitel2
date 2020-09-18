@@ -1,12 +1,11 @@
+import org.junit.*;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
 import java.io.PrintStream;
-import static org.junit.Assert.assertEquals;
+
+import static java.lang.System.setErr;
 
 public class kapitel2Test {
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -17,13 +16,13 @@ public class kapitel2Test {
     @Before
     public void setUpStreams() {
         System.setOut(new PrintStream(outContent));
-        System.setErr(new PrintStream(errContent));
+        setErr(new PrintStream(errContent));
     }
 
     @After
     public void restoreStreams() {
         System.setOut(originalOut);
-        System.setErr(originalErr);
+        setErr(originalErr);
     }
 
 
